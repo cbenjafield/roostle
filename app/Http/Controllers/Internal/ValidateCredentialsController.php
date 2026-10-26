@@ -21,7 +21,7 @@ class ValidateCredentialsController extends Controller
 
         $inbox = Inbox::query()->where('smtp_username', $credentials['username'])->first();
 
-        abort_unless($inbox?->verifySmtpPassword($credentials['password']), 401);
+        abort_unless($inbox?->verifySmtpPassword($credentials['password']), 404);
 
         return response()->json(['inbox_id' => $inbox->id]);
     }

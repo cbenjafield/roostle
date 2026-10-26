@@ -70,7 +70,7 @@ test('wrong smtp credentials are rejected', function (string $username, string $
 
     smtpService()
         ->postJson(route('internal.smtp.credentials.validate'), compact('username', 'password'))
-        ->assertUnauthorized();
+        ->assertNotFound();
 })->with([
     'wrong password' => ['rstuser', 'nope'],
     'unknown user' => ['rstother', 'hunter2'],

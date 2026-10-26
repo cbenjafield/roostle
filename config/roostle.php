@@ -41,6 +41,6 @@ return [
 
     'disk' => env('ROOSTLE_MESSAGE_DISK', env('FILESYSTEM_DISK', 'local')),
 
-    'max_message_kilobytes' => (int) env('ROOSTLE_MAX_MESSAGE_KILOBYTES', 25600),
+    'max_message_kilobytes' => (int) env('ROOSTLE_MAX_MESSAGE_KILOBYTES', 5120),
 
 ];
